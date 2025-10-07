@@ -177,7 +177,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   color: var(--primary-color);
   background: linear-gradient(to top, #0b0d18, #141625);
   padding: var(--line-height);
@@ -185,6 +184,7 @@ body {
   border: 1px solid rgba(111, 53, 226, 0.3);
   border-radius: 5px;
   width: 100%;
+  text-align: center;
   height: 266px;
 }
 .do-section .card i {
@@ -196,11 +196,141 @@ body {
   margin-bottom: var(--line-height);
 }
 
+.recent-work-section .card {
+  display: flex;
+  margin-bottom: var(--line-height);
+  color: var(--primary-color);
+  background: linear-gradient(to top, #0b0d18, #141625);
+  padding: var(--btn-font-size);
+  line-height: var(--line-height);
+  border: 1px solid rgba(111, 53, 226, 0.3);
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
+.recent-work-section .projects-link a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: var(--sub-title-font-size);
+  font-weight: var(--midium-font-weight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--btn-font-size);
+  cursor: progress;
+}
+
+.client-review-section .review-star {
+  display: flex;
+  color: #daa520;
+  margin-bottom: var(--primary-font-size);
+}
+.client-review-section .card {
+  display: flex;
+  color: var(--primary-color);
+  background: linear-gradient(to top, #0b0d18, #141625);
+  padding: var(--btn-font-size);
+  line-height: var(--line-height);
+  border: 1px solid rgba(111, 53, 226, 0.3);
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  height: 266px;
+}
+.client-review-section .card .client-info .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+.client-review-section .card .client-info .info h3 {
+  background-color: rgba(1, 3, 22, 0.9);
+  padding: var(--sub-title-font-size);
+  color: var(--primary-color);
+  font-size: var(--line-height);
+  border-radius: 50%;
+  margin-bottom: var(--line-height);
+}
+.client-review-section .card .client-info .info p {
+  font-size: var(--primary-font-size);
+  font-weight: var(--primary-font-weight);
+  color: #4f5053;
+}
+
+.work-section {
+  padding-bottom: 130px;
+}
+.work-section .submit-form .form-field {
+  margin-bottom: var(--line-height);
+}
+.work-section .submit-form .form-field input,
+.work-section .submit-form .form-field textarea {
+  width: 100%;
+  background: linear-gradient(to top, #0b0d18, #141625);
+  padding: var(--btn-font-size);
+  color: var(--primary-color);
+  border: 1px solid rgba(111, 53, 226, 0.3);
+  border-radius: 5px;
+}
+.work-section .submit-form .form-button button {
+  position: relative;
+  width: 100%;
+  padding: var(--sub-title-font-size);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: var(--btn-font-size);
+  font-weight: var(--secondary-font-weight);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.work-section .submit-form .form-button button:hover {
+  background-color: transparent;
+}
+.work-section .submit-form .form-button button:before {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 2px 4px var(--primary-color);
+  border-radius: 12px;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+.work-section .submit-form .form-button button:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+.work-section .contact-link .link {
+  display: flex;
+  align-items: center;
+}
+.work-section .contact-link .link i {
+  background-color: rgba(1, 3, 22, 0.9);
+  padding: var(--line-height);
+  color: var(--secondary-color);
+  font-size: var(--line-height);
+  border-radius: 50%;
+  margin-bottom: var(--line-height);
+}
+.work-section .contact-link .link .link-title a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
 .footer-section {
   background: linear-gradient(to top, #0b0d18, #141625);
   text-align: center;
   padding: 30px 0 30px 0;
-  color: #4f5053;
+  color: #78797c;
 }
 .footer-section .icon {
   display: flex;
@@ -208,4 +338,8 @@ body {
   justify-content: center;
   gap: var(--title-font-size);
   margin-bottom: var(--line-height);
+}
+.footer-section .icon a {
+  color: #78797c;
+  font-size: var(--btn-font-size);
 }/*# sourceMappingURL=style.css.map */
