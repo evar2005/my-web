@@ -58,19 +58,29 @@ body {
   list-style-type: none;
 }
 .header-section .navigation-bar .nav-list li a {
+  position: relative;
   text-decoration: none;
   font-weight: var(--primary-font-weight);
   font-size: var(--primary-font-size);
   color: var(--primary-color);
-  transition: all 0.3s ease-in-out;
+  padding-bottom: 5px;
 }
-.header-section .navigation-bar .nav-list li:hover {
-  border: 2px solid var(--secondary-color);
-  box-shadow: 0 2px 4px var(--primary-color);
-  border-radius: 5px;
-  padding: 15px;
+.header-section .navigation-bar .nav-list li a::after {
+  content: "";
+  position: absolute;
+  background-color: #6f35e2;
+  height: 2px;
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transition: all 0.5s ease-in-out;
+}
+.header-section .navigation-bar .nav-list li a:hover::after {
+  width: 100%;
 }
 .header-section .navigation-bar .nav-list .nav-btn a {
+  position: relative;
   background-color: var(--secondary-color);
   padding: 15px;
   border-radius: 12px;
@@ -82,9 +92,24 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .header-section .navigation-bar .nav-list .nav-btn a:hover {
-  border: 1px solid var(--secondary-color);
-  box-shadow: 0 2px 5px var(--primary-color);
-  background-color: transparent;
+  background: transparent;
+}
+.header-section .navigation-bar .nav-list .nav-btn a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 2px 4px var(--primary-color);
+  border-radius: 12px;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+}
+.header-section .navigation-bar .nav-list .nav-btn a:hover::before {
+  visibility: visible;
 }
 
 .toggle-btn {
@@ -121,6 +146,7 @@ body {
   justify-content: center;
 }
 .hero-section .btn-primary a {
+  position: relative;
   background-color: var(--secondary-color);
   padding: 15px 24px;
   border-radius: 12px;
@@ -129,12 +155,27 @@ body {
   font-weight: var(--secondary-font-weight);
   font-size: var(--btn-font-size);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .hero-section .btn-primary a:hover {
+  background-color: transparent;
+}
+.hero-section .btn-primary a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border: 1px solid var(--secondary-color);
   box-shadow: 0 2px 2px 2px var(--primary-color);
-  background-color: transparent;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.hero-section .btn-primary a:hover::before {
+  visibility: visible;
 }
 
 .intro-section .intro-img img {
@@ -162,6 +203,51 @@ body {
 
 .text {
   text-align: center;
+}
+
+.exparties .exparties-wrap .skill .skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--line-height);
+}
+.exparties .exparties-wrap .skill .skill-item h5 {
+  font-weight: var(--midium-font-weight);
+  font-size: var(--btn-font-size);
+}
+.exparties .exparties-wrap .skill .skill-item span {
+  font-weight: var(--primary-font-weight);
+  color: #78797c;
+}
+.exparties .exparties-wrap .skill .skill-bar {
+  position: relative;
+  background-color: #141625;
+  width: 100%;
+  height: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.exparties .exparties-wrap .skill .skill-bar:before {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  height: 10px;
+  border-radius: 10px;
+}
+.exparties .exparties-wrap .skill.html .skill-bar::before {
+  width: 95%;
+}
+.exparties .exparties-wrap .skill.js .skill-bar::before {
+  width: 75%;
+}
+.exparties .exparties-wrap .skill.shopify .skill-bar::before {
+  width: 80%;
+}
+.exparties .exparties-wrap .skill.css .skill-bar::before {
+  width: 90%;
+}
+.exparties .exparties-wrap .skill.wp .skill-bar::before {
+  width: 85%;
 }
 
 .card-title {
@@ -203,10 +289,15 @@ body {
   background: linear-gradient(to top, #0b0d18, #141625);
   padding: var(--btn-font-size);
   line-height: var(--line-height);
-  border: 1px solid rgba(111, 53, 226, 0.3);
-  border-radius: 5px;
+  border-radius: 12px;
   width: 100%;
   text-align: center;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+.recent-work-section .card .work-card-title {
+  color: var(--secondary-color);
 }
 .recent-work-section .projects-link a {
   text-decoration: none;

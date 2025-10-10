@@ -53,21 +53,31 @@ body {
       li {
         list-style-type: none;
         a {
+          position: relative;
           text-decoration: none;
           font-weight: var(--primary-font-weight);
           font-size: var(--primary-font-size);
           color: var(--primary-color);
-          transition: all 0.3s ease-in-out;
-        }
-        &:hover {
-          border: 2px solid var(--secondary-color);
-          box-shadow: 0 2px 4px var(--primary-color);
-          border-radius: 5px;
-          padding: 15px;
+          padding-bottom: 5px;
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: #6f35e2;
+            height: 2px;
+            width: 0;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            transition: all 0.5s ease-in-out;
+          }
+          &:hover::after {
+            width: 100%;
+          }
         }
       }
       .nav-btn {
         a {
+          position: relative;
           background-color: var(--secondary-color);
           padding: 15px;
           border-radius: 12px;
@@ -78,10 +88,25 @@ body {
           cursor: pointer;
           transition: all 0.3s ease-in-out;
           &:hover {
-            border: 1px solid var(--secondary-color);
-            box-shadow: 0 2px 5px var(--primary-color);
-            background-color: transparent;
+            background: transparent;
           }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 2px 4px var(--primary-color);
+            border-radius: 12px;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out;
+          }
+           &:hover::before {
+              visibility: visible;
+            }
         }
       }
     }
@@ -122,6 +147,7 @@ body {
     align-items: center;
     justify-content: center;
     a {
+      position: relative;
       background-color: var(--secondary-color);
       padding: 15px 24px;
       border-radius: 12px;
@@ -130,11 +156,26 @@ body {
       font-weight: var(--secondary-font-weight);
       font-size: var(--btn-font-size);
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.5s ease-in-out;
       &:hover {
-        border: 1px solid var(--secondary-color);
-        box-shadow: 0 2px 2px 2px var(--primary-color);
         background-color: transparent;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--secondary-color);
+        box-shadow:0 2px 2px 2px var(--primary-color);
+        left: 0;
+        top: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+      }
+      &:hover::before{
+        visibility: visible;
       }
     }
   }
@@ -167,6 +208,56 @@ body {
   text-align: center;
 }
 // my exparties section
+.exparties {
+  .exparties-wrap {
+    .skill {
+      .skill-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: var(--line-height);
+        h5 {
+          font-weight: var(--midium-font-weight);
+          font-size: var(--btn-font-size);
+        }
+        span {
+          font-weight: var(--primary-font-weight);
+          color: #78797c;
+        }
+      }
+      .skill-bar {
+        position: relative;
+        background-color: #141625;
+        width: 100%;
+        height: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        &:before {
+          content: "";
+          position: absolute;
+          background-color: var(--secondary-color);
+          height: 10px;
+          border-radius: 10px;
+        }
+      }
+      &.html .skill-bar::before {
+        width: 95%;
+      }
+      &.js .skill-bar::before {
+        width: 75%;
+      }
+      &.shopify .skill-bar::before {
+        width: 80%;
+      }
+      &.css .skill-bar::before {
+        width: 90%;
+      }
+      &.wp .skill-bar::before {
+        width: 85%;
+      }
+    }
+  }
+}
 //  what i do section
 .card-title {
   font-size: var(--btn-font-size);
@@ -208,10 +299,15 @@ body {
     background: linear-gradient(to top, #0b0d18, #141625);
     padding: var(--btn-font-size);
     line-height: var(--line-height);
-    border: 1px solid rgba(111, 53, 226, 0.3);
-    border-radius: 5px;
+    border-radius: 12px;
     width: 100%;
     text-align: center;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    .work-card-title {
+      color: var(--secondary-color);
+    }
   }
   .projects-link {
     a {
